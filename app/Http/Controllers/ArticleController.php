@@ -52,17 +52,24 @@ class ArticleController extends Controller
     {
         $id = (int) $id;
         $article = Article::find($id); 
-        $article->body = Markdown::convertToHtml($article->body);
-        $article->summary = Markdown::convertToHtml($article->summary);
-                              
-        return view('cms/article', ['article' => $article]);
+        if (isset($article->body)) {
+            $article->body = Markdown::convertToHtml($article->body);
+            $article->summary = Markdown::convertToHtml($article->summary);                      
+            return view('cms/article', ['article' => $article]);
+        } else {
+            return redirect()->route('blog_index');
+        }    
     }
 
     public function edit($id)
     {
-        //$id = (int) $id;
-        $article = Article::find($id);                           
-        return view('cms/edit', ['article' => $article]);
+        $id = (int) $id;
+        $article = Article::find($id); 
+        if (isset($article->body)) {
+            return view('cms/edit', ['article' => $article]);
+        } else {
+            return redirect()->route('blog_index');
+        }    
     }
 
 
