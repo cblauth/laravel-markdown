@@ -10,15 +10,17 @@
 
         @forelse ($articles as $article)
         <div class="p-6 bg-white border-b-4 border-gray-200">
-          <a href="{{Route('article', $article->id)}}"
+          <a target="_blank" href="{{Route('article', $article->id)}}"
             class=" text-gray-900 dark:text-white text-lg">{{$article->title}}</a>
           @if ($article->created_at)
           <p class=" text-gray-900 dark:text-white">{{ $article->created_at->format('d/m/Y H:i:s') }}</p>
           @endif
-          <p class=" text-gray-900 dark:text-white text-sm">{{$article->summary}}</p>
+          <p class=" text-gray-900 dark:text-white text-sm">
+            @markdown {!! $article->summary !!}  @endmarkdown
+          </p>
 
           <p class="text-right">
-            <a href="{{Route('article', $article->id)}}" class="underline text-gray-900 dark:text-white">Read</a>
+            <a target="_blank" href="{{Route('article', $article->id)}}" class="underline text-gray-900 dark:text-white">Read</a>
             @auth  &nbsp;|&nbsp;<a href="{{Route('edit', $article->id)}}"
               class="underline text-gray-900 dark:text-white">Edit</a> 
             @endauth

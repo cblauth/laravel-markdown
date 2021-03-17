@@ -32,9 +32,6 @@ Route::get('/articles/delete/{id}', [ArticleController::class, 'delete'])->middl
 
 Route::get('/', [ArticleController::class, 'blog_index'])->name('blog_index');
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

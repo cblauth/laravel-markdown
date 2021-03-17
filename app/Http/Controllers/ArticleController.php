@@ -20,7 +20,7 @@ class ArticleController extends Controller
     public function blog_index()
     {
         //$articles = Article::orderByDesc('updated_at')->where('online', true)->get();
-        $articles = Article::orderByDesc('updated_at')->get();    
+        $articles = Article::orderByDesc('updated_at')->get();  
         return view ('cms/blog_index', ['articles' => $articles]);
     }
 
@@ -54,8 +54,7 @@ class ArticleController extends Controller
         $article = Article::find($id); 
         $article->body = Markdown::convertToHtml($article->body);
         $article->summary = Markdown::convertToHtml($article->summary);
-        
-        //print_r($article); exit;                         
+                              
         return view('cms/article', ['article' => $article]);
     }
 
