@@ -8,7 +8,7 @@ git clone https://github.com/cblauth/laravel-markdown.git
 ```
 * Open project folder
 ```
-cd php-rest-api
+cd laravel-markdown
 ```
 * Rename the file .env.example to .env
 ```
@@ -38,3 +38,19 @@ docker-compose exec app php artisan migrate
 ```
 http://localhost:8000
 ```
+
+## Using the CMS
+
+* Access the CMS public URL to read the posts
+```
+http://localhost:8000
+```
+* Register a user to be able to create posts
+```
+http://localhost:8000/register
+```
+* Login with the new credentials
+```
+http://localhost:8000/login
+```
+
