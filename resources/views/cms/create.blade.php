@@ -11,7 +11,7 @@
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
                         Title
                     </label>
-                    <input class="rounded w-full border-gray-300" name="title" id="name" type="text">
+                    <input class="rounded w-full border-gray-300" name="title" id="name" type="text" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2">
