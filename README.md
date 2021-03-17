@@ -1,4 +1,4 @@
-# LARAVEL MARKDOWN CMS
+# Laravel Markdown CMS
 
 ## Running the application using Docker
 
@@ -30,7 +30,7 @@ docker-compose exec app composer install
 ```
 docker-compose exec app php artisan key:generate
 ```
- * Create all the Database tables using Laravel migration
+ * Create all the database tables using Laravel migration
 ```
 docker-compose exec app php artisan migrate
 ```
@@ -54,3 +54,7 @@ http://localhost:8000/register
 http://localhost:8000/login
 ```
 
+## References
+
+* Markdown Parser
+https://github.com/thephpleague/commonmark
