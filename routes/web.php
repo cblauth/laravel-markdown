@@ -21,6 +21,7 @@ use App\Http\Controllers\ArticleController;
 Route::get('/articles/create', [ArticleController::class, 'create'])->middleware('auth')->name('create');
 
 Route::post('/articles', [ArticleController::class, 'store'])->middleware('auth')->name('store');
+Route::get('/articles', [ArticleController::class, 'blog_index'])->name('blog_index');
 
 Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('article');
 
