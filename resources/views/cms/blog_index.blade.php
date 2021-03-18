@@ -2,9 +2,9 @@
   <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 ">
       @auth
-      <button
+      <a href="{{route('create')}}"><button
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-6"
-        type="button"><a href="{{route('create')}}">New article</a></button>
+        type="button">New article</button></a>
       @endauth
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
 
